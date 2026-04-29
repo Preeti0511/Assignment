@@ -2,7 +2,7 @@ const User = require("../models/User.model");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-// 🔥 SIGNUP
+// SIGNUP
 exports.signup = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -40,7 +40,7 @@ if (err.name === "ValidationError") {
   }
 };
 
-// 🔥 LOGIN
+// LOGIN
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;

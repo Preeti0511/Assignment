@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// 🔥 PRE-SAVE HOOK (ONLY PASSWORD HASHING HERE)
+// PRE-SAVE HOOK (ONLY PASSWORD HASHING HERE)
 userSchema.pre("save", async function () {
   if (!this.isModified("password")) return;
 
