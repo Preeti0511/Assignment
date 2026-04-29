@@ -7,7 +7,7 @@ export const signup = createAsyncThunk(
   "auth/signup",
   async (form, { rejectWithValue }) => {
     try {
-      const res = await API.post("/auth/signup", form);
+      const res = await API.post("/api/auth/signup", form);
       return res.data;
     } catch (err) {
       return rejectWithValue(
