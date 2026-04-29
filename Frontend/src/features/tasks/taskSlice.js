@@ -6,7 +6,7 @@ import API from "../../app/axios";
 export const getTasks = createAsyncThunk(
   "tasks/getTasks",
   async (projectId) => {
-    const res = await API.get(`/tasks/${projectId}`);
+    const res = await API.get(`/api/tasks/${projectId}`);
     return res.data;
   }
 );
@@ -15,7 +15,7 @@ export const getTasks = createAsyncThunk(
 export const createTask = createAsyncThunk(
   "tasks/createTask",
   async ({ projectId, title, dueDate }) => {
-    const res = await API.post(`/tasks/${projectId}`, {
+    const res = await API.post(`/api/tasks/${projectId}`, {
       title,
       dueDate,
     });
@@ -26,7 +26,7 @@ export const createTask = createAsyncThunk(
 export const toggleTask = createAsyncThunk(
   "tasks/toggleTask",
   async (taskId) => {
-    const res = await API.put(`/tasks/${taskId}`);
+    const res = await API.put(`/api/tasks/${taskId}`);
     return res.data;
   }
 );
@@ -35,7 +35,7 @@ export const toggleTask = createAsyncThunk(
 export const deleteTask = createAsyncThunk(
   "tasks/deleteTask",
   async (taskId) => {
-    await API.delete(`/tasks/${taskId}`);
+    await API.delete(`/api/tasks/${taskId}`);
     return taskId;
   }
 );
